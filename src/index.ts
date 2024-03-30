@@ -1,16 +1,20 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const morgan = require("morgan");
 
 dotenv.config();
 
 const app = express();
 
+// watcher
+app.use(morgan("combined"));
+
+// engine
+
 const port = process.env.PORT;
 
-console.log({ port });
-
 app.get("/", (req, res) => {
-  res.send("Express + Typsript gegege Server");
+  res.send("home");
 });
 
 app.listen(port, () => {
