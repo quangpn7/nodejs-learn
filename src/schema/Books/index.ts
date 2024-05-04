@@ -1,9 +1,11 @@
-import { BookModel } from "./books";
+import BookModel from "./definition";
 
-BookModel.find({})
-  .then((data) => {
-    console.log({ data });
-  })
-  .catch((e) => {
-    console.log(e);
-  });
+const getAllBook = async () => {
+  const result = await BookModel.find()
+    .then((data) => data)
+    .catch(() => []);
+
+  return result;
+};
+
+export { getAllBook };

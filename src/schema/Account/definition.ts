@@ -1,7 +1,6 @@
 import { ObjectId } from "../../connectDB";
 
 const ACCOUNT_DEFINITION = {
-  _id: ObjectId,
   username: String,
   password: String,
 };
